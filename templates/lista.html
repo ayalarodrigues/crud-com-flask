@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Lista de Dispositivos</title>
+        <body>
+
+            <h1>Lista de Dispositivos</h1>
+            <hr>
+            <table border = "4">
+                <tr>
+                    <td>Id</td>
+                    <td>Nome</td>
+                    <td>Status</td>
+                    <td>Excluir</td>
+                    <td>Atualizar</td>
+
+
+                    
+                </tr>
+                {% for dispositive in dispositivos %}
+                <tr>
+                    <td>{{dispositive._id}}</td>
+                    <td>{{dispositive.nome}}</td>
+                    <td>{{dispositive.status}}</td>
+                    <td><a href="/excluir/{{dispositive._id}}">X</a></td>
+                    <td><a href="/atualizar/{{dispositive._id}}">Atualizar</a></td>
+                </tr>
+                {% endfor %}
+                
+            </table>
+            <a href="/index">Voltar</a>
+
+        </body>
+    </head>
+</html>
